@@ -11,3 +11,13 @@ class Solution:
         return expected_sum - actual_sum
 
 # Time and Space complexity are O(n) due to sum function and O(1), respectively
+
+class Solution2:
+    def missingNumber(self, nums: List[int]) -> int:
+        nums.sort()
+        for i in range(len(nums)):
+            if i != nums[i]:
+                return i
+        return len(nums)
+
+# Time and Space complexity are O(nlog n) due to sort function and O(1), respectively
